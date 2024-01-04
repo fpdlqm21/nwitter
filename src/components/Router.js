@@ -8,6 +8,16 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
     return(
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             {isLoggedIn && <Navigation userObj={userObj}/>}
+            <div
+                        style={{
+                            maxWidth:890,
+                            width: "100%",
+                            margin: "0 auto",
+                            marginTop: 80,
+                            display: "flex",
+                            justifyContent: "center",
+                        }}            
+            >
             <Routes>
                 {isLoggedIn ? (
                     <>
@@ -18,6 +28,7 @@ const AppRouter = ({isLoggedIn, userObj, refreshUser}) => {
                     <Route exact path="/" element={<Auth/>}/>
                 )}
             </Routes>
+            </div>
         </BrowserRouter>
     );
 }
